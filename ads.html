@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>电动轮椅品牌 Meta 广告情报对比报告 · 2026-06-15</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+:root {
+  --navy:#2B3A67; --teal:#00B4D8; --coral:#FF6B6B; --mint:#06D6A0;
+  --amber:#FFD166; --purple:#7B68EE;
+  --text:#1a1a2e; --text2:#4a4a68; --textm:#8b8ba3;
+  --bg:#f8f9fc; --white:#fff; --border:#e4e7f0;
+  --shadow:0 2px 12px rgba(43,58,103,.08);
+  --r:14px; --font:'Plus Jakarta Sans','Noto Sans SC',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--font);font-size:14px;line-height:1.8;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
+a{color:var(--teal);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* Cover */
+.cover{height:300px;background:var(--navy);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.blob{position:absolute;border-radius:50%;opacity:.3}
+.b1{width:250px;height:250px;background:var(--teal);top:-60px;right:-40px;animation:f1 9s ease-in-out infinite}
+.b2{width:200px;height:200px;background:var(--coral);bottom:-40px;left:-20px;animation:f2 11s ease-in-out infinite}
+.b3{width:160px;height:160px;background:var(--purple);top:30%;left:15%;animation:f3 13s ease-in-out infinite}
+@keyframes f1{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,20px)scale(1.1)}}
+@keyframes f2{0%,100%{transform:translate(0,0)}50%{transform:translate(25px,-20px)scale(1.05)}}
+@keyframes f3{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,15px)scale(1.15)}}
+.cover-inner{position:relative;z-index:2;text-align:center;color:#fff;padding:2rem}
+.cover-badge{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--teal);border:1.5px solid rgba(0,180,216,.5);padding:4px 16px;border-radius:99px;margin-bottom:1.2rem;display:inline-block;background:rgba(0,180,216,.1)}
+.cover h1{font-size:30px;font-weight:800;line-height:1.2;margin-bottom:.5rem}
+.cover-sub{font-size:14px;color:rgba(255,255,255,.6);margin-bottom:1rem}
+.cover-meta{font-size:12px;color:rgba(255,255,255,.4)}
+
+/* Layout */
+.body{max-width:960px;margin:0 auto;padding:2.5rem 1.5rem}
+
+/* Nav pills */
+.brand-nav{display:flex;gap:10px;flex-wrap:wrap;margin:1.5rem 0}
+.nav-pill{padding:6px 18px;border-radius:99px;font-size:12px;font-weight:700;cursor:pointer;border:2px solid transparent;transition:.2s}
+
+/* Section heading */
+.section-title{font-size:19px;font-weight:800;color:var(--navy);margin:2.5rem 0 1.2rem;padding:.7rem 1.2rem;background:linear-gradient(135deg,#eef2ff,#f0f7ff);border-left:5px solid var(--teal);border-radius:0 var(--r) var(--r) 0}
+
+/* KPI grid */
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:2rem 0}
+.brand-kpi-card{background:var(--white);border-radius:var(--r);padding:20px;box-shadow:var(--shadow);border:1px solid var(--border)}
+.brand-name{font-size:13px;font-weight:800;margin-bottom:12px;letter-spacing:.02em}
+.kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:10px}
+.kpi-item{text-align:center}
+.kpi-val{font-size:22px;font-weight:800;color:var(--navy);line-height:1}
+.kpi-lbl{font-size:9px;font-weight:600;color:var(--textm);text-transform:uppercase;letter-spacing:.07em;margin-top:3px}
+.kpi-date{font-size:10px;color:var(--textm)}
+
+/* Chart */
+.chart-box{height:240px;position:relative}
+.card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:22px;margin-bottom:18px;box-shadow:var(--shadow)}
+.card-title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--teal);display:inline-block}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}
+
+/* Comparison table */
+.cmp-table{width:100%;border-collapse:separate;border-spacing:0;font-size:12.5px;border-radius:var(--r);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow)}
+.cmp-table thead{background:var(--navy)}
+.cmp-table th{padding:12px 14px;font-size:11px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.07em}
+.cmp-table td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top;font-size:12px}
+.cmp-table tbody tr:nth-child(even){background:#f8f9fc}
+.metric-label{font-weight:700;color:var(--navy);white-space:nowrap;background:#f0f2f8!important}
+
+/* Positioning quadrants */
+.positioning-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+.pos-quadrant{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:18px;box-shadow:var(--shadow)}
+.pos-q-title{font-size:14px;font-weight:800;margin-bottom:10px}
+.pos-quadrant p{font-size:13px;color:var(--text2);line-height:1.75}
+
+/* Brand sections */
+.brand-section{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:24px;margin-bottom:24px;box-shadow:var(--shadow)}
+.brand-header{padding-left:16px;margin-bottom:20px}
+.brand-header-name{font-size:18px;font-weight:800;margin-bottom:4px}
+.brand-header-url{font-size:12px;color:var(--textm)}
+.subsection{margin-bottom:16px}
+.subsection-title{font-size:12px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
+.theme-list{padding-left:18px}
+.theme-list li{font-size:13px;color:var(--text2);margin-bottom:6px;line-height:1.6}
+
+/* Influencer grid */
+.inf-grid{display:flex;flex-wrap:wrap;gap:10px}
+.inf-item{background:#f0f7ff;border-radius:10px;padding:10px 14px;min-width:180px}
+.inf-name{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:4px}
+.inf-code{font-size:11px;color:var(--teal);font-weight:600}
+
+/* Ad cards */
+.ad-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ad-card{background:#f8f9fc;border-radius:10px;padding:14px;border:1px solid var(--border)}
+.ad-meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px;align-items:center}
+.ad-date{font-size:10px;color:var(--textm)}
+.ad-headline{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.ad-copy{font-size:12px;color:var(--text2);line-height:1.65;margin-bottom:10px}
+.ad-footer{display:flex;gap:8px;flex-wrap:wrap}
+.cta-badge{background:var(--navy);color:#fff;font-size:10px;font-weight:700;padding:3px 10px;border-radius:99px}
+.product-tag{background:#eef2ff;color:var(--navy);font-size:10px;font-weight:600;padding:3px 10px;border-radius:99px}
+
+/* Badges */
+.badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:99px}
+.badge-coral{background:#fde8e8;color:#b71c1c}
+.badge-navy{background:#eef2ff;color:#2B3A67}
+.badge-type{background:#f0f7ff;color:#006064;font-size:9px}
+
+/* Recommendations */
+.rec-list{display:flex;flex-direction:column;gap:12px}
+.rec-item{padding:16px 20px;border-radius:10px;display:flex;gap:14px;align-items:flex-start}
+.rec-high{background:#fff5f5;border-left:4px solid var(--coral)}
+.rec-mid{background:#fffdf0;border-left:4px solid var(--amber)}
+.rec-low{background:#f0fff8;border-left:4px solid var(--mint)}
+.rec-priority{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;white-space:nowrap;padding-top:2px;min-width:60px;color:var(--textm)}
+.rec-content strong{font-size:14px;color:var(--navy);display:block;margin-bottom:6px}
+.rec-content p{font-size:13px;color:var(--text2);line-height:1.7}
+
+hr{border:none;height:2px;background:linear-gradient(90deg,var(--teal),var(--purple),var(--coral));margin:2.5rem 0;border-radius:1px;opacity:.2}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="cover-inner">
+    <div class="cover-badge">META AD INTELLIGENCE · COMPETITIVE ANALYSIS</div>
+    <h1>电动轮椅赛道竞品广告情报报告</h1>
+    <div class="cover-sub">OAS Mobility · Kerdom · All Star Wheelchairs · Rubicon Mobility</div>
+    <div class="cover-meta">采集日期：2026-06-15 · 数据来源：Meta Ad Library · Platform: Meta (Facebook/Instagram)</div>
+  </div>
+</div>
+
+<div class="body">
+
+  <!-- Brand KPI Overview -->
+  <div class="section-title">品牌投放总览</div>
+  <div class="kpi-grid">
+        <div class="brand-kpi-card" style="border-top:4px solid #00B4D8">
+          <div class="brand-name" style="color:#00B4D8">OAS Mobility</div>
+          <div class="kpi-row">
+            <div class="kpi-item"><div class="kpi-val">61</div><div class="kpi-lbl">Active Ads</div></div>
+            <div class="kpi-item"><div class="kpi-val" style="font-size:16px">≥8*</div><div class="kpi-lbl">Video Ads</div></div>
+            <div class="kpi-item"><div class="kpi-val">6</div><div class="kpi-lbl">Influencer Ads</div></div>
+            <div class="kpi-item"><div class="kpi-val">5</div><div class="kpi-lbl">Influencers</div></div>
+          </div>
+          <div class="kpi-date">2026-01-09 ~ 2026-06-04</div>
+        </div>
+        <div class="brand-kpi-card" style="border-top:4px solid #FF6B6B">
+          <div class="brand-name" style="color:#FF6B6B">Kerdom</div>
+          <div class="kpi-row">
+            <div class="kpi-item"><div class="kpi-val">21</div><div class="kpi-lbl">Active Ads</div></div>
+            <div class="kpi-item"><div class="kpi-val">14</div><div class="kpi-lbl">Video Ads</div></div>
+            <div class="kpi-item"><div class="kpi-val">5</div><div class="kpi-lbl">Influencer Ads</div></div>
+            <div class="kpi-item"><div class="kpi-val">2</div><div class="kpi-lbl">Influencers</div></div>
+          </div>
+          <div class="kpi-date">2026-02-26 ~ 2026-06-15</div>
+        </div>
+        <div class="brand-kpi-card" style="border-top:4px solid #FFD166">
+          <div class="brand-name" style="color:#FFD166">All Star Wheelchairs</div>
+          <div class="kpi-row">
+            <div class="kpi-item"><div class="kpi-val">12</div><div class="kpi-lbl">Active Ads</div></div>
+            <div class="kpi-item"><div class="kpi-val" style="font-size:16px">≥3*</div><div class="kpi-lbl">Video Ads</div></div>
+            <div class="kpi-item"><div class="kpi-val">0</div><div class="kpi-lbl">Influencer Ads</div></div>
+            <div class="kpi-item"><div class="kpi-val">0</div><div class="kpi-lbl">Influencers</div></div>
+          </div>
+          <div class="kpi-date">2023-07-06 ~ 2026-06-02</div>
+        </div>
+        <div class="brand-kpi-card" style="border-top:4px solid #7B68EE">
+          <div class="brand-name" style="color:#7B68EE">Rubicon Mobility</div>
+          <div class="kpi-row">
+            <div class="kpi-item"><div class="kpi-val">2</div><div class="kpi-lbl">Active Ads</div></div>
+            <div class="kpi-item"><div class="kpi-val">0</div><div class="kpi-lbl">Video Ads</div></div>
+            <div class="kpi-item"><div class="kpi-val">0</div><div class="kpi-lbl">Influencer Ads</div></div>
+            <div class="kpi-item"><div class="kpi-val">0</div><div class="kpi-lbl">Influencers</div></div>
+          </div>
+          <div class="kpi-date">2026-02-03 ~ present</div>
+        </div></div>
+
+  <hr>
+
+  <!-- Charts -->
+  <div class="section-title">投放规模对比</div>
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title">活跃广告数量对比</div>
+      <div class="chart-box"><canvas id="totalAdsChart"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-title">视频 vs 图片广告对比</div>
+      <div class="chart-box"><canvas id="videoChart"></canvas></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">Influencer 广告数量对比</div>
+    <div style="height:160px;position:relative"><canvas id="infChart"></canvas></div>
+  </div>
+
+  <!-- Comparison Table -->
+  <div class="section-title">竞品详细对比表</div>
+  <div style="overflow-x:auto">
+    <table class="cmp-table">
+      <thead>
+        <tr>
+          <th>指标</th>
+          <th style="color:#00B4D8">OAS Mobility</th><th style="color:#FF6B6B">Kerdom</th><th style="color:#FFD166">All Star Wheelchairs</th><th style="color:#7B68EE">Rubicon Mobility</th>
+        </tr>
+      </thead>
+      <tbody><tr><td class='metric-label'>Total Active Ads</td><td>61</td><td>21</td><td>12</td><td>2</td></tr><tr><td class='metric-label'>Date Range</td><td>2026-01-09 ~ 2026-06-04</td><td>2026-02-26 ~ 2026-06-15</td><td>2023-07-06 ~ 2026-06-02</td><td>2026-02-03 ~ present</td></tr><tr><td class='metric-label'>Products</td><td>OAS Air Pro (33 lbs)<br>OAS Air Ultra (36 lbs)</td><td>DX05 All-Terrain<br>DX06 Heavy Duty<br>DX07 Carbon Fiber<br>DX08 Carbon Fiber<br>Fold-Flat Scooter</td><td>Standard Electric Wheelchair<br>Ultra Lightweight Carbon Fiber Electric Wheelchair</td><td>Rubicon DX04</td></tr><tr><td class='metric-label'>Price Points</td><td>未在广告中披露（仅可见折扣金额，无定价信息）</td><td>DX05: $909.99<br>DX06: $989.99<br>DX07: $1,369.99<br>DX08: $1,669.99<br>Scooter: $909</td><td>Not disclosed in ads (phone order focus)</td><td>Not disclosed in ads</td></tr><tr><td class='metric-label'>Video Ads</td><td>≥8 <span style="font-size:10px;color:#8b8ba3">*19条可见</span></td><td>14 <span style="font-size:10px;color:#8b8ba3">*21条全库</span></td><td>≥3 <span style="font-size:10px;color:#8b8ba3">*10条可见</span></td><td>0</td></tr><tr><td class='metric-label'>Influencer Ads</td><td>6</td><td>5</td><td>0</td><td>0</td></tr><tr><td class='metric-label'>Influencer Partners</td><td>Courtneys Creatvies MUA<br>Jessica Cantwell - Author & Advocate<br>Hidden Disabilities with Courtney<br>Lindsay Murray<br>Itswheelyjess</td><td>Joshua T Pettit<br>I'm Betty</td><td>—</td><td>—</td></tr><tr><td class='metric-label'>Discount Codes</td><td>COURTNEY ($35 off)<br>JESSICA ($35 off)<br>LINDSAY ($35 off)<br>OAS20 ($30 off)</td><td>KDMD150 ($150 off DX05)<br>KDKJP150 ($150 off DX07)<br>DM COUPON (daily World Cup discount)</td><td>—</td><td>—</td></tr><tr><td class='metric-label'>Warranty</td><td>5-Year Warranty</td><td>5-Year Warranty</td><td>2-Year Warranty (some ads: 5-Year Warranty)</td><td>Not mentioned</td></tr><tr><td class='metric-label'>Return Policy</td><td>60-Day Returns / 7-Day Home Trial</td><td>60-Day Returns / 60-Day Home Trial</td><td>Not prominently featured</td><td>Hassle-Free Returns (mentioned briefly)</td></tr><tr><td class='metric-label'>Key Specs</td><td>Air Pro: 33 lbs · Air Ultra: 36 lbs · TSA Approved · Folds in seconds</td><td>DX07: 36.8 lbs carbon fiber · DX08: 25.8 lbs · FAA/TSA Approved · 15+ mile range</td><td>300lb Weight Capacity · 2-5 Day USA Shipping</td><td>DX04: 30 lbs · Folds in 3 seconds · 10 miles range · Airline-Approved</td></tr><tr><td class='metric-label'>Active Campaigns</td><td>OAS Brand Month (June 1-30) — lowest prices of the year</td><td>FIFA World Cup 2026 giveaway — DM 'COUPON' for daily discount<br>Father's Day DX07 Bundle ($1,699.99)<br>Mid-Year Sale: DX06 $989.99 (was $2,859.99)</td><td>Evergreen sale messaging: 'Back On Sale', 'While Supplies Last'</td><td>Limited-Time Deals (generic, no specific offer)</td></tr></tbody>
+    </table>
+  </div>
+
+  <hr>
+
+  <!-- Positioning Analysis -->
+  <div class="section-title">品牌定位分析</div>
+  
+    <div class="positioning-grid">
+      <div class="pos-quadrant">
+        <div class="pos-q-title" style="color:#00B4D8">OAS Mobility — 领先者</div>
+        <p>广告库最大（61条），投放时间线最新（2026年1月起），UGC influencer 矩阵最成熟（6人）。文案聚焦<strong>旅行场景+情感释放</strong>，品牌月造势感强。最大弱点：产品线只有2款，价格未在广告内明示。</p>
+      </div>
+      <div class="pos-quadrant">
+        <div class="pos-q-title" style="color:#FF6B6B">Kerdom — 多SKU攻击者</div>
+        <p>产品线最宽（5款），价格区间覆盖$909-$1,669，价格锚定策略最激进（was $2,859 → now $989）。世界杯话题营销+父亲节节点+老年人口碑故事三线并行。教育型内容（选购指南）建立信任。</p>
+      </div>
+      <div class="pos-quadrant">
+        <div class="pos-q-title" style="color:#FFD166">All Star Wheelchairs — 长青运营者</div>
+        <p>广告从2023年7月跑至今，<strong>最长运营3年以上</strong>。无任何influencer、无折扣码、不秀价格，只靠一个电话号码和"Back On Sale"钩住潜在买家。极低创意投入，可能依赖电话销售转化。</p>
+      </div>
+      <div class="pos-quadrant">
+        <div class="pos-q-title" style="color:#7B68EE">Rubicon Mobility — 入门挣扎者</div>
+        <p>只有2条广告，且完全相同的文案从2026年2月运行至今无更新。emoji堆砌+hashtag轰炸+"World's Lightest"主张但无重量数字支撑。没有influencer、没有折扣、没有社会证明。广告投入力度明显落后于竞争对手。</p>
+      </div>
+    </div>
+
+  <hr>
+
+  <!-- Individual Brand Deep-Dives -->
+  <div class="section-title">各品牌广告深度解析（含实际广告文案）</div>
+  
+        <div class="brand-section" id="OAS_Mobility">
+          <div class="brand-header" style="border-left:6px solid #00B4D8">
+            <div class="brand-header-name" style="color:#00B4D8">OAS Mobility</div>
+            <div class="brand-header-url"><a href="https://oasmobility.com" target="_blank">https://oasmobility.com</a> · <a href="https://www.facebook.com/oasmobility/" target="_blank">Facebook Page</a></div>
+          </div>
+
+          <div class="two-col">
+            <div class="subsection">
+              <div class="subsection-title">文案核心策略</div>
+              <ul class="theme-list"><li>Travel freedom & portability ('compact as a suitcase', 'built for real life on the go')</li><li>Weight specs as hero claim (33 lbs Air Pro / 36 lbs Air Ultra)</li><li>Fear relief: 'stress-free', 'worry-free return policy', 'shop with total confidence'</li><li>Lifestyle aspiration: Europe travel, family visits, day outings</li><li>Brand Month urgency: 'lowest price of the year'</li></ul>
+            </div>
+            <div class="subsection">
+              <div class="subsection-title">Hook 类型</div>
+              <ul class="theme-list"><li>Contrast hook: 'Traditional wheelchairs are bulky. The OAS Air Pro...'</li><li>Pain-relief hook: 'Travel gets easier when your chair doesn't feel like a burden'</li><li>Influencer UGC: real disability community voices</li><li>Promotional urgency: Brand Month countdown</li></ul>
+            </div>
+          </div>
+
+          
+            <div class="subsection">
+              <div class="subsection-title">Influencer Partners</div>
+              <div class="inf-grid"><div class="inf-item"><div class="inf-name">Courtneys Creatvies MUA</div><span class="inf-code">Code: COURTNEY · $35 off</span></div><div class="inf-item"><div class="inf-name">Jessica Cantwell - Author & Advocate</div><span class="inf-code">Code: JESSICA · $35 off</span></div><div class="inf-item"><div class="inf-name">Hidden Disabilities with Courtney</div><span class="inf-code">Code: COURTNEY · $35 off</span></div><div class="inf-item"><div class="inf-name">Lindsay Murray</div><span class="inf-code">Code: LINDSAY · $35 off</span></div><div class="inf-item"><div class="inf-name">Itswheelyjess</div><span class="inf-code">No code</span></div></div>
+            </div>
+
+          <div class="subsection">
+            <div class="subsection-title">代表性广告（实际采集）</div>
+            <div class="ad-grid">
+            <div class="ad-card">
+              <div class="ad-meta"><span class="badge badge-navy">Brand Ad</span> <span class="badge badge-type">IMAGE</span> <span class="ad-date">Started: 2026-06-01</span></div>
+              
+              <div class="ad-copy">🔥 OAS Brand Month (June 1-June 30) Exclusive: Lock in our lowest price of the year now. Tired of bulky, heavy, and hard-to-store wheelchairs? The OAS Air Pro makes life on the move effortless. At just 33 lbs, this durable power wheelchair folds in seconds—perfect for car trunks a…</div>
+              <div class="ad-footer">
+                <span class="cta-badge">Learn More</span>
+                <span class="product-tag">OAS Air Pro</span>
+              </div>
+            </div>
+            <div class="ad-card">
+              <div class="ad-meta"><span class="badge badge-coral">Influencer: Itswheelyjess</span> <span class="badge badge-type">VIDEO</span> <span class="ad-date">Started: 2026-06-04</span></div>
+              
+              <div class="ad-copy">Needing a wheelchair doesn't magically remove your desire to see the world. The goal is still to live a big life. My @oasmobility_us Air Pro was the perfect companion on my recent trip to Europe! #OasBrandMonth</div>
+              <div class="ad-footer">
+                <span class="cta-badge">—</span>
+                <span class="product-tag">OAS Air Pro</span>
+              </div>
+            </div>
+            <div class="ad-card">
+              <div class="ad-meta"><span class="badge badge-coral">Influencer: Hidden Disabilities with Courtney</span> <span class="badge badge-type">VIDEO</span> <span class="ad-date">Started: 2026-05-20</span></div>
+              
+              <div class="ad-copy">Trying to decide between the OAS Mobility Air Pro and Air Ultra? I tested both side-by-side to compare portability, comfort, terrain handling, support, and overall ride experience. Use my code COURTNEY for $35 off.</div>
+              <div class="ad-footer">
+                <span class="cta-badge">Order Now</span>
+                <span class="product-tag">OAS Air Pro / Air Ultra</span>
+              </div>
+            </div>
+            <div class="ad-card">
+              <div class="ad-meta"><span class="badge badge-navy">Brand Ad</span> <span class="badge badge-type">IMAGE</span> <span class="ad-date">Started: 2026-03-30</span></div>
+              <div class="ad-headline">60-Day Returns · 5-Year Warranty</div>
+              <div class="ad-copy">Travel gets easier when your chair doesn't feel like a burden. The OAS Air Ultra gives you a roomier, more supportive fit, while still staying lightweight and compact enough for real life on the go.</div>
+              <div class="ad-footer">
+                <span class="cta-badge">Learn More</span>
+                <span class="product-tag">OAS Air Ultra</span>
+              </div>
+            </div>
+            <div class="ad-card">
+              <div class="ad-meta"><span class="badge badge-navy">Brand Ad</span> <span class="badge badge-type">VIDEO</span> <span class="ad-date">Started: 2026-03-06</span></div>
+              <div class="ad-headline">Compact Fold, Big Comfort</div>
+              <div class="ad-copy">Want more room and support, but don't want the weight that usually comes with it? The OAS Air Ultra gives you a more comfortable, supportive fit—while staying just 36 lbs and compact for easy storage.</div>
+              <div class="ad-footer">
+                <span class="cta-badge">Learn More</span>
+                <span class="product-tag">OAS Air Ultra</span>
+              </div>
+            </div></div>
+          </div>
+        </div>
+        <div class="brand-section" id="Kerdom">
+          <div class="brand-header" style="border-left:6px solid #FF6B6B">
+            <div class="brand-header-name" style="color:#FF6B6B">Kerdom</div>
+            <div class="brand-header-url"><a href="https://kerdom.com" target="_blank">https://kerdom.com</a> · <a href="https://www.facebook.com/KerdomMobility/" target="_blank">Facebook Page</a></div>
+          </div>
+
+          <div class="two-col">
+            <div class="subsection">
+              <div class="subsection-title">文案核心策略</div>
+              <ul class="theme-list"><li>First-person testimonial: elderly user lifting chair alone for first time</li><li>Social proof anchor: '10,000+ families chose Kerdom', '10,247 families'</li><li>Heavy price anchoring: 'was $2,859.99 → now $989.99 (save $1,870)'</li><li>Seasonal hooks: Father's Day, New Year, World Cup 2026 giveaway</li><li>Spec-led: weight (25.8 lbs DX08), range (15 miles), capacity (400 lbs)</li><li>Educational content: 'How to Choose the Right Electric Wheelchair'</li></ul>
+            </div>
+            <div class="subsection">
+              <div class="subsection-title">Hook 类型</div>
+              <ul class="theme-list"><li>First-person elderly testimonial: 'At 25.8 lbs, I loaded it by myself for the first time'</li><li>Social proof: star ratings + family count</li><li>Product launch: 'DX07 Has Landed'</li><li>Holiday/seasonal urgency: Father's Day bundle, World Cup giveaway</li><li>Education-to-purchase: buyer's guide carousel</li></ul>
+            </div>
+          </div>
+
+          
+            <div class="subsection">
+              <div class="subsection-title">Influencer Partners</div>
+              <div class="inf-grid"><div class="inf-item"><div class="inf-name">Joshua T Pettit</div><span class="inf-code">Code: KDKJP150 · $150 off</span></div><div class="inf-item"><div class="inf-name">I'm Betty</div><span class="inf-code">Code: KDKJP150 · $150 off</span></div></div>
+            </div>
+
+          <div class="subsection">
+            <div class="subsection-title">代表性广告（实际采集）</div>
+            <div class="ad-grid">
+            <div class="ad-card">
+              <div class="ad-meta"><span class="badge badge-navy">Brand Ad</span> <span class="badge badge-type">VIDEO</span> <span class="ad-date">Started: 2026-06-11</span></div>
+              <div class="ad-headline">#1 Best-Seller Now $1669.99 (Save $2195)</div>
+              <div class="ad-copy">🪶 "At 25.8 lbs, I loaded it into my trunk by myself for the first time." Meet the Kerdom DX08 Carbon Fiber — the world's lightest folding power chair. I'm 72 years old. I've tried 4 different wheelchairs in the past 3 years. This one? I fold it in 3 seconds. I lift it with one ha…</div>
+              <div class="ad-footer">
+                <span class="cta-badge">Learn More</span>
+                <span class="product-tag">DX08</span>
+              </div>
+            </div>
+            <div class="ad-card">
+              <div class="ad-meta"><span class="badge badge-navy">Brand Ad</span> <span class="badge badge-type">VIDEO</span> <span class="ad-date">Started: 2026-06-11</span></div>
+              <div class="ad-headline">The 36.8 lb Chair That Changed Everything</div>
+              <div class="ad-copy">🪶 "At 36.8 lbs, I loaded it into my trunk by myself for the first time." Meet the Kerdom DX07. I fold it in 3 seconds. I lift it with one hand. And I put it in my Honda Civic without asking anyone for help. → See why 10,000+ families chose Kerdom</div>
+              <div class="ad-footer">
+                <span class="cta-badge">Learn More</span>
+                <span class="product-tag">DX07</span>
+              </div>
+            </div>
+            <div class="ad-card">
+              <div class="ad-meta"><span class="badge badge-navy">Brand Ad</span> <span class="badge badge-type">VIDEO</span> <span class="ad-date">Started: 2026-06-10</span></div>
+              <div class="ad-headline">⭐⭐⭐⭐⭐ 10,247 families chose Kerdom</div>
+              <div class="ad-copy">⭐⭐⭐⭐⭐ "Took my Kerdom DX06 to the trail... It's about a 15/20° hill. Goes up to the highway across the river. Then we went to the dog park through gravel and grass — not even one power light was used up." — Lance Luedtke</div>
+              <div class="ad-footer">
+                <span class="cta-badge">Learn More</span>
+                <span class="product-tag">DX06</span>
+              </div>
+            </div>
+            <div class="ad-card">
+              <div class="ad-meta"><span class="badge badge-navy">Brand Ad</span> <span class="badge badge-type">VIDEO</span> <span class="ad-date">Started: 2026-06-10</span></div>
+              <div class="ad-headline">⭐⭐⭐⭐⭐ 10,247 families chose Kerdom</div>
+              <div class="ad-copy">"I never thought I'd feel this free again." Watch how the Kerdom DX05 gave her back the independence to explore — grass, bumps, slopes, and all. Only 58.5 lbs, folds flat, and fits right in your trunk. 400 lb capacity. Zero compromises.</div>
+              <div class="ad-footer">
+                <span class="cta-badge">Learn More</span>
+                <span class="product-tag">DX05</span>
+              </div>
+            </div>
+            <div class="ad-card">
+              <div class="ad-meta"><span class="badge badge-navy">Brand Ad</span> <span class="badge badge-type">IMAGE</span> <span class="ad-date">Started: 2026-06-05</span></div>
+              
+              <div class="ad-copy">BEST CHOICE TO MY FOREVER HERO. Some heroes don't wear capes. This Father's Day, give back a little of the freedom and comfort they've given us. Father's Day DX07 Bundle Special now $1699.99.</div>
+              <div class="ad-footer">
+                <span class="cta-badge">—</span>
+                <span class="product-tag">DX07 Bundle</span>
+              </div>
+            </div></div>
+          </div>
+        </div>
+        <div class="brand-section" id="All_Star_Wheelchairs">
+          <div class="brand-header" style="border-left:6px solid #FFD166">
+            <div class="brand-header-name" style="color:#FFD166">All Star Wheelchairs</div>
+            <div class="brand-header-url"><a href="https://allstarwheelchairs.com" target="_blank">https://allstarwheelchairs.com</a> · <a href="https://www.facebook.com/100076298406739/" target="_blank">Facebook Page</a></div>
+          </div>
+
+          <div class="two-col">
+            <div class="subsection">
+              <div class="subsection-title">文案核心策略</div>
+              <ul class="theme-list"><li>Evergreen urgency: 'Back On Sale', 'While Supplies Last', 'Get It While Supplies Last'</li><li>Phone-first approach: (669) 267-5655 in EVERY ad</li><li>Spec bullets: shipping speed, weight capacity, warranty</li><li>Real customer testimonials: Jerusalem travel, off-road use</li><li>Single consistent headline: 'The Lightest Weight Electric Wheelchair!'</li></ul>
+            </div>
+            <div class="subsection">
+              <div class="subsection-title">Hook 类型</div>
+              <ul class="theme-list"><li>FOMO/scarcity: 'While Supplies Last', 'Back On Sale'</li><li>Announcement hook: 'BIG NEWS!', 'What Are You Waiting For?'</li><li>Customer testimonial: real use-case stories (Jerusalem, off-road)</li><li>Direct phone CTA: call to order in every ad</li></ul>
+            </div>
+          </div>
+
+          
+
+          <div class="subsection">
+            <div class="subsection-title">代表性广告（实际采集）</div>
+            <div class="ad-grid">
+            <div class="ad-card">
+              <div class="ad-meta"><span class="badge badge-navy">Brand Ad</span> <span class="badge badge-type">IMAGE</span> <span class="ad-date">Started: 2023-07-06</span></div>
+              <div class="ad-headline">Best Electric Wheelchair — The Lightest Weight Electric Wheelchair!</div>
+              <div class="ad-copy">What Are You Waiting For? Our Top Rated Lightweight Electric Wheelchair Is Back On Sale! ✅ 2-5 Day USA Shipping! ✅ 300lb Weight Capacity ✅ Full 2 Year Warranty Questions? Call Us: (669) 267-5655</div>
+              <div class="ad-footer">
+                <span class="cta-badge">Learn More</span>
+                <span class="product-tag">Electric Wheelchair</span>
+              </div>
+            </div>
+            <div class="ad-card">
+              <div class="ad-meta"><span class="badge badge-navy">Brand Ad</span> <span class="badge badge-type">VIDEO</span> <span class="ad-date">Started: 2023-07-06</span></div>
+              <div class="ad-headline">Best Electric Wheelchair — The Lightest Weight Electric Wheelchair!</div>
+              <div class="ad-copy">Our Top Rated Lightweight Electric Wheelchair Is Back On Sale! ✅ 2-5 Day USA Shipping! ✅ 300lb Weight Capacity ✅ Full 2 Year Warranty Call To Order: (669) 267-5655</div>
+              <div class="ad-footer">
+                <span class="cta-badge">Shop Now</span>
+                <span class="product-tag">Electric Wheelchair</span>
+              </div>
+            </div>
+            <div class="ad-card">
+              <div class="ad-meta"><span class="badge badge-navy">Brand Ad</span> <span class="badge badge-type">IMAGE</span> <span class="ad-date">Started: 2023-07-06</span></div>
+              <div class="ad-headline">Best Electric Wheelchair — The Lightest Weight Electric Wheelchair!</div>
+              <div class="ad-copy">Get It While Supplies Last! Our Signature Lightweight Electric Wheelchair! ✅ 2-5 Day USA Shipping! ✅ 300lb Weight Capacity ✅ Full 2 Year Warranty Call To Order: (669) 267-5655</div>
+              <div class="ad-footer">
+                <span class="cta-badge">Learn More</span>
+                <span class="product-tag">Electric Wheelchair</span>
+              </div>
+            </div>
+            <div class="ad-card">
+              <div class="ad-meta"><span class="badge badge-navy">Brand Ad</span> <span class="badge badge-type">VIDEO</span> <span class="ad-date">Started: 2024-04-12</span></div>
+              <div class="ad-headline">Best Electric Wheelchair — The Lightest Weight Electric Wheelchair!</div>
+              <div class="ad-copy">What Are You Waiting For? Get One Of Our Best Selling Electric Wheelchairs While Supplies Last! ✅ 2-5 Day USA Shipping! ✅ 300lb Weight Capacity ✅ Full 5 Year Warranty Call To Order: (669) 267-5655</div>
+              <div class="ad-footer">
+                <span class="cta-badge">Shop Now</span>
+                <span class="product-tag">Electric Wheelchair</span>
+              </div>
+            </div>
+            <div class="ad-card">
+              <div class="ad-meta"><span class="badge badge-navy">Brand Ad</span> <span class="badge badge-type">IMAGE</span> <span class="ad-date">Started: 2025-01-25</span></div>
+              <div class="ad-headline">Best Electric Wheelchair — The Lightest Weight Electric Wheelchair!</div>
+              <div class="ad-copy">BIG NEWS! Our Top Rated Lightweight Electric Wheelchair is back on sale! • 2-5 day USA shipping • 300lb weight capacity • Full 2 year warranty Need answers? Call (669) 267-5655 or shop now and take control of your mobility today!</div>
+              <div class="ad-footer">
+                <span class="cta-badge">Learn More</span>
+                <span class="product-tag">Electric Wheelchair</span>
+              </div>
+            </div></div>
+          </div>
+        </div>
+        <div class="brand-section" id="Rubicon_Mobility">
+          <div class="brand-header" style="border-left:6px solid #7B68EE">
+            <div class="brand-header-name" style="color:#7B68EE">Rubicon Mobility</div>
+            <div class="brand-header-url"><a href="https://www.rubiconmobility.com" target="_blank">https://www.rubiconmobility.com</a> · <a href="https://www.facebook.com/RubiconMobility/" target="_blank">Facebook Page</a></div>
+          </div>
+
+          <div class="two-col">
+            <div class="subsection">
+              <div class="subsection-title">文案核心策略</div>
+              <ul class="theme-list"><li>Heavy emoji usage — almost every bullet starts with emoji</li><li>Keyword-stuffed hashtag block at end of copy</li><li>Same 2 ads running since Feb 2026 — no creative refresh</li><li>Generic 'Limited-Time Deals' with no specific offer or price</li><li>Multiple 'world's lightest' claims without weight spec proof</li></ul>
+            </div>
+            <div class="subsection">
+              <div class="subsection-title">Hook 类型</div>
+              <ul class="theme-list"><li>Benefit-led: 'Regain Your Independence'</li><li>Superlative claim: 'World's Lightest Electric Wheelchair'</li></ul>
+            </div>
+          </div>
+
+          
+
+          <div class="subsection">
+            <div class="subsection-title">代表性广告（实际采集）</div>
+            <div class="ad-grid">
+            <div class="ad-card">
+              <div class="ad-meta"><span class="badge badge-navy">Brand Ad</span> <span class="badge badge-type">IMAGE</span> <span class="ad-date">Started: 2026-02-03</span></div>
+              <div class="ad-headline">🌟 Discover the World's Lightest Electric Wheelchair – Foldable in 3 Seconds, Airline-Approved &amp; Built for Travel, Comfort &amp; Independence!</div>
+              <div class="ad-copy">🦽 Regain Your Independence with the World's Lightest Electric Wheelchair! 🚀 🏆 Lightweight. Foldable. Powerful. ✅ Ultra Lightweight &amp; Foldable – Folds in 3 Seconds and only 30 lbs ✅ Airline-Approved Battery – Long Range Up to 10 Miles Per Charge ✅ Free Shipping + Lowest Price Guar…</div>
+              <div class="ad-footer">
+                <span class="cta-badge">Shop Now</span>
+                <span class="product-tag">Rubicon DX04</span>
+              </div>
+            </div>
+            <div class="ad-card">
+              <div class="ad-meta"><span class="badge badge-navy">Brand Ad</span> <span class="badge badge-type">IMAGE</span> <span class="ad-date">Started: 2026-02-03</span></div>
+              <div class="ad-headline">🌟 Discover the World's Lightest Electric Wheelchair – Foldable in 3 Seconds, Airline-Approved &amp; Built for Travel, Comfort &amp; Independence!</div>
+              <div class="ad-copy">🦽 Regain Your Independence with the World's Lightest Electric Wheelchair! 🚀 🏆 Lightweight. Foldable. Powerful. ✅ Ultra Lightweight &amp; Foldable – Folds in 3 Seconds and only 30 lbs ✅ Airline-Approved Battery – Long Range Up to 10 Miles Per Charge ✅ Free Shipping + Lowest Price Guar…</div>
+              <div class="ad-footer">
+                <span class="cta-badge">Shop Now</span>
+                <span class="product-tag">Rubicon DX04</span>
+              </div>
+            </div></div>
+          </div>
+        </div>
+
+  <hr>
+
+  <!-- Strategic Recommendations -->
+  <div class="section-title">对甲方的策略建议</div>
+  
+    <div class="rec-list">
+      <div class="rec-item rec-high">
+        <div class="rec-priority">高优先级</div>
+        <div class="rec-content">
+          <strong>对标 OAS 建立 Influencer UGC 矩阵</strong>
+          <p>OAS 6名残障社区 influencer 形成内容护城河——她们本身就是目标用户，说服力远超品牌广告。建议招募 2-3 名真实轮椅用户 creator，给予专属折扣码，核心内容角度：旅行测评、日常使用、产品对比。</p>
+        </div>
+      </div>
+      <div class="rec-item rec-high">
+        <div class="rec-priority">高优先级</div>
+        <div class="rec-content">
+          <strong>用「第一人称老年人独白」格式拍视频</strong>
+          <p>Kerdom DX08/DX07 广告中「72岁独自把椅子放进 Honda Civic」这类具体场景的第一人称叙述是目前最高效的 hook 格式。脚本公式：具体年龄 + 过去的困境 + 第一次做到某事 + 技术参数 + 社会证明。</p>
+        </div>
+      </div>
+      <div class="rec-item rec-mid">
+        <div class="rec-priority">中优先级</div>
+        <div class="rec-content">
+          <strong>对标 Kerdom 的价格锚定，明示售价+划线价</strong>
+          <p>Kerdom 多条广告（DX05/DX06/DX07/DX08）使用「was $X → now $Y」价格锚定——如 DX06 实际广告文案：<em>"Was $2,859.99 → Now $989.99"</em>。价格不透明（如 All Star、OAS）会增加购买摩擦。建议广告 CTA 卡片 subheadline 明示售价并附划线原价。</p>
+        </div>
+      </div>
+      <div class="rec-item rec-mid">
+        <div class="rec-priority">中优先级</div>
+        <div class="rec-content">
+          <strong>拍「旅行场景」视频，针对 Snowbird 人群</strong>
+          <p>Kerdom 有 Snowbird/Florida 专题广告，OAS 有 Europe 旅行 influencer 视频。轮椅 + 旅行是高意向转化场景。建议拍：机场过安检 + 放入行李架 + 景点游览 三段场景，配 TSA-Approved 文案。</p>
+        </div>
+      </div>
+      <div class="rec-item rec-low">
+        <div class="rec-priority">参考测试</div>
+        <div class="rec-content">
+          <strong>加入「节日礼品」文案线（Father's Day / Holiday）</strong>
+          <p>Kerdom Father's Day DX07 Bundle 广告（$1,699 bundle）证明节日礼品角度有效。建议 A/B 测试「送给父母的礼物」文案 vs 「为自己重获自由」文案，两条情感线同时测。</p>
+        </div>
+      </div>
+      <div class="rec-item rec-low">
+        <div class="rec-priority">参考测试</div>
+        <div class="rec-content">
+          <strong>别学 Rubicon：避免 emoji 堆叠 + hashtag 轰炸</strong>
+          <p>Rubicon 的广告用了13个 hashtag 和每行都有 emoji，这在 Facebook 信息流里降低可信度且分散注意力。竞品头部玩家（OAS/Kerdom）文案简洁、克制、情感驱动。</p>
+        </div>
+      </div>
+    </div>
+
+  <div style="height:40px"></div>
+  <div style="background:#f0f7ff;border-radius:10px;padding:16px 20px;margin-bottom:30px;font-size:12px;color:#4a4a68;line-height:1.8">
+    <strong style="color:#2B3A67">数据说明与采样限制：</strong><br>
+    · 广告总条数（61/21/12/2）来自 Meta Ad Library 搜索结果计数，真实准确<br>
+    · OAS 视频广告数（≥8）：基于页面可见的约19条广告统计，非全库61条<br>
+    · All Star 视频广告数（≥3）：基于页面可见的约10条广告统计，非全库12条<br>
+    · Kerdom 视频广告数（14）：来自 Agent 分析全库21条快照，精确度最高<br>
+    · Rubicon 全库仅2条，数据完整<br>
+    · OAS/All Star 价格信息：广告正文中未披露，报告不作猜测<br>
+    · 所有广告文案均逐字来自 Meta Ad Library 实际抓取，未做推断
+  </div>
+  <div style="text-align:center;font-size:11px;color:var(--textm);padding-bottom:40px">
+    数据来源：Meta Ad Library 公开数据 · 采集时间：2026-06-15 · 仅包含当前投放中广告 · *标注项为采样估算
+  </div>
+
+</div>
+
+<script>
+const TEAL='#00B4D8',CORAL='#FF6B6B',AMBER='#FFD166',PURPLE='#7B68EE',NAVY='#2B3A67',MINT='#06D6A0';
+const brandColors = ["#00B4D8", "#FF6B6B", "#FFD166", "#7B68EE"];
+const brandNames = ["OAS Mobility", "Kerdom", "All Star Wheelchairs", "Rubicon Mobility"];
+const tick = '#8b8ba3', grid = '#e4e7f0';
+const baseOpts = {
+  scales:{
+    x:{ticks:{color:tick},grid:{color:grid}},
+    y:{ticks:{color:tick},grid:{color:grid}}
+  },
+  plugins:{legend:{display:false}}
+};
+
+new Chart(document.getElementById('totalAdsChart'),{
+  type:'bar',
+  data:{
+    labels:brandNames,
+    datasets:[{data:[61, 21, 12, 2],backgroundColor:brandColors,borderRadius:8,borderSkipped:false}]
+  },
+  options:{...baseOpts}
+});
+
+new Chart(document.getElementById('videoChart'),{
+  type:'bar',
+  data:{
+    labels:brandNames,
+    datasets:[
+      {label:'视频广告（已确认）',data:[8, 14, 3, 0],backgroundColor:brandColors.map(c=>c+'cc'),borderRadius:6},
+    ]
+  },
+  options:{
+    ...baseOpts,
+    plugins:{
+      legend:{display:true,position:'bottom',labels:{color:NAVY,font:{size:12,weight:'600'}}},
+      tooltip:{callbacks:{label:function(ctx){
+        const notes=['OAS: 基于19条可见广告','Kerdom: 基于全库21条','All Star: 基于10条可见广告','Rubicon: 全库2条'];
+        return ctx.dataset.label+': '+ctx.raw+' ('+notes[ctx.dataIndex]+')';
+      }}}
+    }
+  }
+});
+
+new Chart(document.getElementById('infChart'),{
+  type:'bar',
+  data:{
+    labels:brandNames,
+    datasets:[{data:[6, 5, 0, 0],backgroundColor:brandColors,borderRadius:8,borderSkipped:false}]
+  },
+  options:{...baseOpts,indexAxis:'y'}
+});
+</script>
+</body>
+</html>
