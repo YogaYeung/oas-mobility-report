@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OAS Mobility · 品牌策略方案 · 2026-06-16</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:#2B3A67; --teal:#00B4D8; --coral:#FF6B6B;
+  --mint:#06D6A0; --amber:#FFD166; --purple:#7B68EE; --pink:#FF85A1;
+  --text:#1a1a2e; --text2:#4a4a68; --textm:#8b8ba3;
+  --bg:#f8f9fc; --white:#fff; --border:#e4e7f0;
+  --shadow:0 2px 12px rgba(43,58,103,.08);
+  --r:14px; --font:'Plus Jakarta Sans','Noto Sans SC',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--font);font-size:14px;line-height:1.8;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
+a{color:var(--teal);text-decoration:none}
+
+/* Cover */
+.cover{min-height:320px;background:var(--navy);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:3rem 2rem}
+.blob{position:absolute;border-radius:50%;opacity:.28}
+.b1{width:320px;height:320px;background:var(--teal);top:-80px;right:-60px;animation:f1 9s ease-in-out infinite}
+.b2{width:240px;height:240px;background:var(--amber);bottom:-60px;left:-30px;animation:f2 11s ease-in-out infinite}
+.b3{width:180px;height:180px;background:var(--purple);top:35%;left:12%;animation:f3 13s ease-in-out infinite}
+.b4{width:120px;height:120px;background:var(--mint);bottom:20%;right:15%;animation:f1 10s ease-in-out infinite reverse}
+@keyframes f1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-25px,18px) scale(1.08)}}
+@keyframes f2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(22px,-18px) scale(1.06)}}
+@keyframes f3{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(28px,12px) scale(1.12)}}
+.cover-inner{position:relative;z-index:2;text-align:center;color:#fff;max-width:720px;margin:0 auto}
+.cover-badge{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--amber);border:1.5px solid rgba(255,209,102,.45);padding:4px 18px;border-radius:99px;margin-bottom:1.4rem;display:inline-block;background:rgba(255,209,102,.1)}
+.cover h1{font-size:36px;font-weight:800;line-height:1.2;margin-bottom:.6rem}
+.cover-sub{font-size:15px;color:rgba(255,255,255,.55);margin-bottom:1.4rem}
+.cover-meta{font-size:11px;color:rgba(255,255,255,.35)}
+.back-link{position:absolute;top:1.5rem;left:1.5rem;z-index:10;font-size:12px;font-weight:700;color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.2);padding:5px 14px;border-radius:99px;text-decoration:none;transition:.2s}
+.back-link:hover{color:#fff;border-color:rgba(255,255,255,.5)}
+
+/* Layout */
+.body{max-width:960px;margin:0 auto;padding:2.5rem 1.5rem 4rem}
+
+/* Positioning Hero Block */
+.pos-hero{background:linear-gradient(135deg,var(--navy) 0%,#1a2a55 100%);border-radius:var(--r);padding:2.5rem;margin-bottom:2rem;color:#fff;text-align:center;position:relative;overflow:hidden}
+.pos-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(0,180,216,.2),transparent 60%),radial-gradient(circle at 20% 80%,rgba(255,209,102,.15),transparent 60%)}
+.pos-hero-inner{position:relative;z-index:1}
+.pos-tagline-label{font-size:10px;font-weight:700;letter-spacing:2.5px;color:var(--teal);text-transform:uppercase;margin-bottom:.8rem}
+.pos-tagline{font-size:28px;font-weight:800;line-height:1.25;margin-bottom:1.2rem}
+.pos-tagline em{color:var(--amber);font-style:normal}
+.pos-tagline-en{font-size:14px;color:rgba(255,255,255,.5);font-style:italic;margin-bottom:1.8rem}
+.pos-pillars{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.pos-pillar{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:12px 18px;min-width:200px;text-align:left}
+.pillar-icon{font-size:20px;margin-bottom:6px;display:block}
+.pillar-title{font-size:13px;font-weight:700;color:#fff;margin-bottom:3px}
+.pillar-desc{font-size:11px;color:rgba(255,255,255,.55);line-height:1.5}
+
+/* Section heading */
+.section-title{font-size:17px;font-weight:800;color:var(--navy);margin:2.5rem 0 1.2rem;padding:.65rem 1.2rem;background:linear-gradient(135deg,#eef2ff,#f0f7ff);border-left:5px solid var(--teal);border-radius:0 var(--r) var(--r) 0}
+
+/* Cards */
+.card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:22px;margin-bottom:16px;box-shadow:var(--shadow)}
+.card-title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--teal);display:inline-block}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:16px}
+
+/* SWOT */
+.swot-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}
+.swot-quad{border-radius:var(--r);padding:18px;border:1px solid var(--border)}
+.swot-s{background:#edfbf5;border-color:#b2ecd6}
+.swot-w{background:#fff5f5;border-color:#ffd0d0}
+.swot-o{background:#f0f7ff;border-color:#bdd9f7}
+.swot-t{background:#fffdf0;border-color:#ffe29a}
+.swot-label{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
+.swot-s .swot-label{color:#1a8a60}
+.swot-w .swot-label{color:#c0392b}
+.swot-o .swot-label{color:#1a5fa8}
+.swot-t .swot-label{color:#a06000}
+.swot-item{font-size:12.5px;color:var(--text2);padding:5px 0 5px 12px;border-left:3px solid;margin-bottom:4px;line-height:1.55}
+.swot-s .swot-item{border-color:#06D6A0}
+.swot-w .swot-item{border-color:#FF6B6B}
+.swot-o .swot-item{border-color:#00B4D8}
+.swot-t .swot-item{border-color:#FFD166}
+.swot-source{font-size:10px;color:var(--textm);margin-top:2px}
+
+/* USP */
+.usp-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:20px;box-shadow:var(--shadow);margin-bottom:12px}
+.usp-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:12px}
+.usp-num{width:32px;height:32px;border-radius:50%;background:var(--navy);color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.usp-title{font-size:15px;font-weight:800;color:var(--navy)}
+.usp-subtitle{font-size:12px;color:var(--teal);font-weight:600;margin-top:2px}
+.usp-body{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:10px}
+.usp-meta-item{background:var(--bg);border-radius:8px;padding:10px 12px}
+.usp-meta-label{font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--textm);margin-bottom:4px}
+.usp-meta-val{font-size:12px;color:var(--text2);line-height:1.55}
+.usp-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 9px;border-radius:99px;margin-bottom:8px}
+.badge-high{background:#e8fdf5;color:#1a8a60;border:1px solid #b2ecd6}
+.badge-mid{background:#fff9ee;color:#a06000;border:1px solid #ffe29a}
+.badge-hold{background:#f3f4ff;color:#6655cc;border:1px solid #d0ccff}
+
+/* Persona cards */
+.persona-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:20px;box-shadow:var(--shadow)}
+.persona-header{display:flex;align-items:center;gap:12px;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.persona-icon{font-size:28px}
+.persona-label{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--textm);margin-bottom:2px}
+.persona-name{font-size:15px;font-weight:800;color:var(--navy)}
+.persona-row{display:flex;gap:8px;margin-bottom:8px;align-items:flex-start}
+.persona-key{font-size:11px;font-weight:700;color:var(--teal);min-width:64px;flex-shrink:0;padding-top:1px}
+.persona-val{font-size:12.5px;color:var(--text2);line-height:1.6}
+.persona-quote{background:#f0f7ff;border-left:3px solid var(--teal);padding:8px 12px;border-radius:0 8px 8px 0;font-size:12px;color:var(--text2);font-style:italic;margin-top:10px;line-height:1.6}
+
+/* Value ladder */
+.value-ladder{display:flex;flex-direction:column;gap:0}
+.ladder-step{padding:16px 20px;position:relative}
+.ladder-step::after{content:'↑';position:absolute;left:50%;transform:translateX(-50%);bottom:-14px;font-size:18px;color:var(--border);z-index:1}
+.ladder-step:last-child::after{display:none}
+.ls-top{background:linear-gradient(135deg,#f0edff,#e8e4ff);border-radius:var(--r) var(--r) 0 0;border:1px solid #d0ccff}
+.ls-mid{background:linear-gradient(135deg,#e8f7ff,#ddf3ff);border:1px solid #bdd9f7;border-top:none;border-bottom:none}
+.ls-bot{background:linear-gradient(135deg,#e8fdf5,#d9fae9);border-radius:0 0 var(--r) var(--r);border:1px solid #b2ecd6}
+.ladder-badge{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px}
+.ls-top .ladder-badge{color:#6655cc}
+.ls-mid .ladder-badge{color:#1a5fa8}
+.ls-bot .ladder-badge{color:#1a8a60}
+.ladder-title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px}
+.ladder-desc{font-size:12px;color:var(--text2);line-height:1.6}
+
+/* Competitor map */
+.comp-table{width:100%;border-collapse:separate;border-spacing:0;font-size:12.5px;border-radius:var(--r);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow)}
+.comp-table thead{background:var(--navy)}
+.comp-table th{padding:10px 14px;font-size:11px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.07em;text-align:center}
+.comp-table th:first-child{text-align:left}
+.comp-table td{padding:10px 14px;border-bottom:1px solid var(--border);text-align:center;font-size:12px}
+.comp-table td:first-child{font-weight:700;color:var(--navy);text-align:left}
+.comp-table tbody tr:last-child td{border-bottom:none}
+.comp-table tbody tr.oas-row{background:#f0f7ff}
+.check{color:#1a8a60;font-size:16px}
+.cross{color:#c0392b;font-size:16px}
+.warn{color:#a06000;font-size:14px}
+
+/* Channel priority */
+.channel-list{display:flex;flex-direction:column;gap:10px}
+.channel-item{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:10px;border:1px solid var(--border);background:var(--white)}
+.ch-priority{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0}
+.ch-p0{background:#fde8e8;color:#c0392b}
+.ch-p1{background:#fff9ee;color:#a06000}
+.ch-p2{background:#e8fdf5;color:#1a8a60}
+.ch-watch{background:#f3f4ff;color:#6655cc}
+.ch-name{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:2px}
+.ch-desc{font-size:12px;color:var(--text2);line-height:1.5}
+
+/* Ad creative formulas */
+.creative-box{background:#f8f9fc;border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:12px}
+.creative-label{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--textm);margin-bottom:8px}
+.creative-title{font-size:14px;font-weight:800;color:var(--navy);margin-bottom:6px}
+.creative-desc{font-size:12.5px;color:var(--text2);line-height:1.65}
+.formula-box{background:var(--navy);color:#fff;border-radius:8px;padding:12px 16px;font-size:12px;line-height:1.8;margin-bottom:12px}
+.formula-box span{color:var(--amber)}
+.example-box{background:#f0f7ff;border-left:3px solid var(--teal);padding:10px 14px;border-radius:0 8px 8px 0;font-size:12.5px;color:var(--text2);font-style:italic;line-height:1.7;margin-bottom:12px}
+
+/* Timeline */
+.timeline{display:flex;flex-direction:column;gap:0}
+.tl-item{display:flex;gap:16px;padding-bottom:20px;position:relative}
+.tl-item::before{content:'';position:absolute;left:19px;top:40px;bottom:0;width:2px;background:var(--border)}
+.tl-item:last-child::before{display:none}
+.tl-dot{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;z-index:1}
+.tl-now{background:var(--teal);color:#fff}
+.tl-mid{background:var(--amber);color:var(--navy)}
+.tl-future{background:var(--purple);color:#fff}
+.tl-content{padding-top:8px;flex:1}
+.tl-period{font-size:11px;font-weight:700;color:var(--textm);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.tl-item-list{list-style:none;padding:0}
+.tl-item-list li{font-size:12.5px;color:var(--text2);padding:4px 0 4px 16px;position:relative;line-height:1.55}
+.tl-item-list li::before{content:'→';position:absolute;left:0;color:var(--teal);font-weight:700}
+
+/* Warranty note */
+.warning-box{background:#fff9ee;border:1px solid #ffe29a;border-radius:10px;padding:14px 16px;margin-top:12px;display:flex;gap:10px;align-items:flex-start}
+.warning-icon{font-size:16px;flex-shrink:0;margin-top:1px}
+.warning-text{font-size:12.5px;color:#7a4900;line-height:1.6}
+
+/* Data caveat */
+.caveat{background:#f3f4ff;border:1px solid #d0ccff;border-radius:10px;padding:14px 16px;font-size:12px;color:#4a4a68;line-height:1.7;margin-top:2rem}
+.caveat strong{color:var(--navy)}
+
+hr{border:none;height:2px;background:linear-gradient(90deg,var(--teal),var(--purple),var(--amber));margin:2.5rem 0;border-radius:1px;opacity:.18}
+
+.footer{text-align:center;padding:2rem 1.5rem;border-top:1px solid var(--border);font-size:12px;color:var(--textm)}
+
+@media(max-width:640px){
+  .cover h1{font-size:24px}
+  .swot-grid,.two-col,.three-col,.usp-body{grid-template-columns:1fr}
+  .pos-pillars{flex-direction:column;align-items:center}
+}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="blob b1"></div><div class="blob b2"></div>
+  <div class="blob b3"></div><div class="blob b4"></div>
+  <a class="back-link" href="index.html">← 返回报告中心</a>
+  <div class="cover-inner">
+    <div class="cover-badge">BRAND STRATEGY · 2026-06-16</div>
+    <h1>OAS Mobility<br>品牌策略方案</h1>
+    <div class="cover-sub">SWOT · USP · 人群画像 · 差异化定位 · 推广策略</div>
+    <div class="cover-meta">数据来源：Reviews调研（55条）· Meta广告情报（4品牌）· 官网实测 · 2026-06-16</div>
+  </div>
+</div>
+
+<div class="body">
+
+  <!-- ── 品牌定位 Hero ── -->
+  <div class="section-title">品牌核心定位</div>
+  <div class="pos-hero">
+    <div class="pos-hero-inner">
+      <div class="pos-tagline-label">主定位语</div>
+      <div class="pos-tagline">为<em>想出门</em>的人，<em>认真</em>造的轮椅。</div>
+      <div class="pos-tagline-en">Designed for people who want to go out — not just get by.</div>
+      <div class="pos-pillars">
+        <div class="pos-pillar">
+          <span class="pillar-icon">🏋️</span>
+          <div class="pillar-title">轻到自己搬上车</div>
+          <div class="pillar-desc">Air Pro 33 lbs，一人完成装车<br>无需麻烦任何人</div>
+        </div>
+        <div class="pos-pillar">
+          <span class="pillar-icon">🎨</span>
+          <div class="pillar-title">多色可选用得更自在</div>
+          <div class="pillar-desc">Air Ultra 5色选择权<br>坐着出门少一分顾虑</div>
+        </div>
+        <div class="pos-pillar">
+          <span class="pillar-icon">✅</span>
+          <div class="pillar-title">FDA认证买得放心</div>
+          <div class="pillar-desc">Class II + ISO 13485<br>法规从业者主动背书</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ── SWOT ── -->
+  <div class="section-title">SWOT 分析</div>
+  <div class="swot-grid">
+    <div class="swot-quad swot-s">
+      <div class="swot-label">S — 优势</div>
+      <div class="swot-item">轻便折叠：Air Pro 33 lbs，TSA认证，一人装车<div class="swot-source">Reviews 8次提及，行业最高频卖点</div></div>
+      <div class="swot-item">全地形避震：沥青/草地/碎石/树林均有实测<div class="swot-source">Reviews 5次提及</div></div>
+      <div class="swot-item">多色个性化：Air Ultra 5色，行业唯一<div class="swot-source">Reviews 4次提及，用户自发对比竞品"只有黑色"</div></div>
+      <div class="swot-item">FDA Class II + ISO 13485 医疗认证<div class="swot-source">法规从业者主动背书，"These standards are no joke"</div></div>
+      <div class="swot-item">客服响应快：Trustpilot 4.2★，零极端负面<div class="swot-source">Trustpilot 13条评价 77%正面</div></div>
+      <div class="swot-item">广告规模最大：61条活跃广告，竞品最多<div class="swot-source">对比 Kerdom 21条，All Star 12条</div></div>
+      <div class="swot-item">退货政策：60天退货，当前活动期90天，无补货费<div class="swot-source">官网退货政策页实测</div></div>
+    </div>
+    <div class="swot-quad swot-w">
+      <div class="swot-label">W — 劣势</div>
+      <div class="swot-item">折叠塌陷安全隐患：颠簸时意外折叠，有骨折受伤案例<div class="swot-source">Reviews 5次提及（跨品牌，含OAS相关）</div></div>
+      <div class="swot-item">网红营销信任危机：Reddit已将OAS标记为"赞助品牌"<div class="swot-source">Reviews 4次明确反感，OAS被点名</div></div>
+      <div class="swot-item">评价基数薄：Trustpilot仅13条，说服力受限<div class="swot-source">对比 All Star 49条</div></div>
+      <div class="swot-item">保修实际范围窄：车架5年，其余零部件仅12个月<div class="swot-source">官网保修页实测，广告"5年保修"说法有误导成分</div></div>
+    </div>
+    <div class="swot-quad swot-o">
+      <div class="swot-label">O — 机会</div>
+      <div class="swot-item">Kerdom信任真空：Trustpilot强制封评，274条64%一星<div class="swot-source">市场正品位置空出</div></div>
+      <div class="swot-item">Rubicon系统失信：BBB 10投诉9条无回应<div class="swot-source">安全与服务双空白待填</div></div>
+      <div class="swot-item">UGC长期测评缺口：Reddit明确呼吁"6个月以上无赞助真实评测"<div class="swot-source">Reviews 未满足需求</div></div>
+      <div class="swot-item">折叠双重锁机制：全行业塌陷投诉频发，先做 = 抢占安全赛道<div class="swot-source">Reviews 安全类投诉</div></div>
+      <div class="swot-item">节日礼品场景：父亲节/母亲节，Kerdom已验证有效<div class="swot-source">广告情报实测</div></div>
+      <div class="swot-item">人体工学配件市场：可调靠背/凝胶坐垫需求明确，暂无品牌布局<div class="swot-source">Reviews 未满足需求</div></div>
+    </div>
+    <div class="swot-quad swot-t">
+      <div class="swot-label">T — 威胁</div>
+      <div class="swot-item">All Star Wheelchairs：4.4★/49条，3年持续运营，唯一真正竞争对手<div class="swot-source">竞品口碑 + 广告情报</div></div>
+      <div class="swot-item">安全事故病毒传播风险：一条折叠塌陷视频 = 品牌危机<div class="swot-source">Reviews 骨折受伤案例已存在</div></div>
+      <div class="swot-item">网红营销边际递减：消费者免疫加速，Reddit"网红推广≠品质"共识形成<div class="swot-source">Reviews</div></div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ── USP ── -->
+  <div class="section-title">核心差异化（竞品错位验证）</div>
+
+  <div class="card" style="margin-bottom:20px">
+    <div class="card-title">唯一性组合验证</div>
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>品牌</th>
+          <th>轻便旅行<br>TSA认证</th>
+          <th>FDA医疗认证</th>
+          <th>多色个性化</th>
+          <th>口碑可信度</th>
+          <th>Trustpilot评分</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="oas-row">
+          <td>OAS Mobility</td>
+          <td><span class="check">✓</span></td>
+          <td><span class="check">✓</span></td>
+          <td><span class="check">✓</span></td>
+          <td>成长期 · 4.2★</td>
+          <td>4.2★ / 13条</td>
+        </tr>
+        <tr>
+          <td>All Star Wheelchairs</td>
+          <td><span class="check">✓</span></td>
+          <td><span class="warn">未实测</span></td>
+          <td><span class="cross">✗</span></td>
+          <td>最稳 · 4.4★</td>
+          <td>4.4★ / 49条</td>
+        </tr>
+        <tr>
+          <td>Kerdom</td>
+          <td><span class="cross">✗</span></td>
+          <td><span class="cross">✗</span></td>
+          <td><span class="cross">✗</span></td>
+          <td>已崩 · 封评</td>
+          <td>❌ 强制封评</td>
+        </tr>
+        <tr>
+          <td>Rubicon Mobility</td>
+          <td><span class="check">✓</span></td>
+          <td><span class="warn">未实测</span></td>
+          <td><span class="cross">✗</span></td>
+          <td>已失信 · 无回应</td>
+          <td>— / BBB投诉</td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="font-size:11px;color:var(--textm);margin-top:10px">⚠️ All Star 和 Rubicon 的 FDA 认证状态未实测，标注为未验证。</div>
+  </div>
+
+  <!-- ── 价值阶梯 ── -->
+  <div class="section-title">价值阶梯</div>
+  <div class="value-ladder" style="max-width:600px;margin:0 auto 2rem">
+    <div class="ladder-step ls-top">
+      <div class="ladder-badge">自我表达价值</div>
+      <div class="ladder-title">轮椅也可以有我的颜色，我的选择</div>
+      <div class="ladder-desc">颜色选择权让用户坐着出门少一分顾虑，降低心理门槛，更愿意主动出门</div>
+    </div>
+    <div class="ladder-step ls-mid">
+      <div class="ladder-badge">情感价值</div>
+      <div class="ladder-title">自己搬得动，出门不用麻烦任何人</div>
+      <div class="ladder-desc">独立自主的掌控感——不依赖子女或他人，自己决定去哪</div>
+    </div>
+    <div class="ladder-step ls-bot">
+      <div class="ladder-badge">功能价值</div>
+      <div class="ladder-title">33 lbs · TSA认证 · 15 mi续航 · FDA Class II · 5色可选 · 60天退货</div>
+      <div class="ladder-desc">所有数据均来自官网产品页实测，Air Pro $728（活动价）/ Air Ultra $929</div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ── 目标人群 ── -->
+  <div class="section-title">目标人群画像</div>
+  <div class="three-col">
+
+    <div class="persona-card">
+      <div class="persona-header">
+        <span class="persona-icon">👴</span>
+        <div>
+          <div class="persona-label">人群 A · 主力</div>
+          <div class="persona-name">行动受限的活跃老年人</div>
+        </div>
+      </div>
+      <div class="persona-row">
+        <span class="persona-key">特征</span>
+        <span class="persona-val">60岁以上，腿脚不便但心态积极，独居或与家人同住</span>
+      </div>
+      <div class="persona-row">
+        <span class="persona-key">场景</span>
+        <span class="persona-val">独自出门买菜、拜访朋友、旅行，核心需求是「不依赖他人」</span>
+      </div>
+      <div class="persona-row">
+        <span class="persona-key">决策点</span>
+        <span class="persona-val">轻便（自己装车）、续航够用、客服好找</span>
+      </div>
+      <div class="persona-row">
+        <span class="persona-key">渠道</span>
+        <span class="persona-val">Facebook广告、子女推荐</span>
+      </div>
+      <div class="persona-quote">"A single charge will last me for two weeks. I love it!" — 87岁用户 · Trustpilot</div>
+    </div>
+
+    <div class="persona-card">
+      <div class="persona-header">
+        <span class="persona-icon">👨‍👩‍👧</span>
+        <div>
+          <div class="persona-label">人群 B · 礼品决策者</div>
+          <div class="persona-name">孝顺子女/配偶</div>
+        </div>
+      </div>
+      <div class="persona-row">
+        <span class="persona-key">特征</span>
+        <span class="persona-val">35-55岁，帮长辈做决策，经济能力中等偏上</span>
+      </div>
+      <div class="persona-row">
+        <span class="persona-key">场景</span>
+        <span class="persona-val">父亲节/母亲节/生日礼物，出院后康复配置</span>
+      </div>
+      <div class="persona-row">
+        <span class="persona-key">决策点</span>
+        <span class="persona-val">FDA认证（可信）、退货保障（万一不合适）、外观体面</span>
+      </div>
+      <div class="persona-row">
+        <span class="persona-key">渠道</span>
+        <span class="persona-val">Meta广告、节日搜索</span>
+      </div>
+      <div class="persona-quote">节日礼品文案角度已被 Kerdom 父亲节广告验证有效——OAS 可接盘同场景，叠加 FDA 认证差异</div>
+    </div>
+
+    <div class="persona-card">
+      <div class="persona-header">
+        <span class="persona-icon">🧑</span>
+        <div>
+          <div class="persona-label">人群 C · 舆论影响者</div>
+          <div class="persona-name">中青年长期残障用户</div>
+        </div>
+      </div>
+      <div class="persona-row">
+        <span class="persona-key">特征</span>
+        <span class="persona-val">25-50岁，长期使用轮椅，有对比经验，活跃在Reddit</span>
+      </div>
+      <div class="persona-row">
+        <span class="persona-key">场景</span>
+        <span class="persona-val">替换旧椅、旅行备用、日常主力用车</span>
+      </div>
+      <div class="persona-row">
+        <span class="persona-key">决策点</span>
+        <span class="persona-val">折叠安全性、无赞助长期评测、人体工学</span>
+      </div>
+      <div class="persona-row">
+        <span class="persona-key">⚠️ 风险</span>
+        <span class="persona-val">Reddit负面舆论主要来源，也是Kerdom崩塌后最有潜力转化的群体</span>
+      </div>
+      <div class="persona-quote">"You can't trust anything an influencer says when they're being paid to say it." — Reddit用户</div>
+    </div>
+
+  </div>
+  <div style="font-size:11px;color:var(--textm);padding:0 4px 1rem">⚠️ 人群年龄区间为基于 Reviews 定性描述 + 广告创意风格推断，非 Meta 后台数据验证。如有 Shopify/Meta 后台年龄分布可进一步校准。</div>
+
+  <hr>
+
+  <!-- ── 推广策略 ── -->
+  <div class="section-title">推广策略框架</div>
+
+  <!-- 渠道优先级 -->
+  <div class="card" style="margin-bottom:16px">
+    <div class="card-title">渠道优先级</div>
+    <div class="channel-list">
+      <div class="channel-item">
+        <div class="ch-priority ch-p0">P0</div>
+        <div><div class="ch-name">Meta 广告</div><div class="ch-desc">主战场，61条活跃广告，ROI已验证，持续优化创意策略</div></div>
+      </div>
+      <div class="channel-item">
+        <div class="ch-priority ch-p0">P0</div>
+        <div><div class="ch-name">UGC 真实用户内容</div><div class="ch-desc">Kerdom崩塌留下信任真空，Reddit明确呼吁「6个月以上无赞助真实评测」，OAS可率先填补</div></div>
+      </div>
+      <div class="channel-item">
+        <div class="ch-priority ch-p1">P1</div>
+        <div><div class="ch-name">Google 搜索广告</div><div class="ch-desc">主动搜索场景意图强，All Star 依赖电话销售说明搜索流量有量</div></div>
+      </div>
+      <div class="channel-item">
+        <div class="ch-priority ch-p1">P1</div>
+        <div><div class="ch-name">邮件营销</div><div class="ch-desc">购后复购 / 延伸电池配件 / UGC征集，成本最低的复购渠道</div></div>
+      </div>
+      <div class="channel-item">
+        <div class="ch-priority ch-p2">P2</div>
+        <div><div class="ch-name">YouTube 长期测评</div><div class="ch-desc">耐用性内容缺口明显，影响人群C（长期残障用户）的最终决策</div></div>
+      </div>
+      <div class="channel-item">
+        <div class="ch-priority ch-watch">观察</div>
+        <div><div class="ch-name">TikTok</div><div class="ch-desc">暂无数据支撑，不建议盲目投入，待观察后续竞品动作</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Meta 广告创意 -->
+  <div class="card" style="margin-bottom:16px">
+    <div class="card-title">Meta 广告创意策略</div>
+
+    <div class="formula-box">
+      <strong>竞品验证有效的文案公式（Kerdom实测）：</strong><br>
+      <span>具体年龄</span> + 过去困境 + <span>第一次实现某事</span> + 技术参数 + <span>社会证明</span>
+    </div>
+
+    <div class="example-box">
+      OAS版本示例："我78岁，第一次自己把轮椅放进后备箱——没叫任何人帮忙。33磅，折叠5秒，TSA认证，FDA Class II。我选了粉色。"
+    </div>
+
+    <div class="three-col">
+      <div class="creative-box">
+        <div class="creative-label">① 最高优先</div>
+        <div class="creative-title">🛫 旅行自由线</div>
+        <div class="creative-desc">机场安检 → 飞机舱 → 目的地出行三段场景。Hook：「上次旅行我没去成，这次不一样了」。参数：33 lbs / TSA认证 / 15 mi续航</div>
+      </div>
+      <div class="creative-box">
+        <div class="creative-label">② 核心差异</div>
+        <div class="creative-title">🚗 独立自主线</div>
+        <div class="creative-desc">停车场装车、超市购物、家门口出发。第一人称老年人独白格式（Kerdom已失信，OAS可接盘）。情感核：不麻烦孩子，自己搞定</div>
+      </div>
+      <div class="creative-box">
+        <div class="creative-label">③ 季节性</div>
+        <div class="creative-title">🎁 节日礼品线</div>
+        <div class="creative-desc">父亲节/母亲节礼品场景。Hook：「父亲节送他这个」。差异化：叠加FDA认证背书，拉开与Kerdom的信任差距</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 网红策略调整 -->
+  <div class="card" style="margin-bottom:16px">
+    <div class="card-title">网红策略调整建议</div>
+    <table class="comp-table">
+      <thead>
+        <tr><th style="text-align:left">现状</th><th style="text-align:left">问题</th><th style="text-align:left">建议</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>6名网红，统一$35折扣码</td><td>Reddit已将OAS标记为"赞助品牌"</td><td>不增加新网红数量</td></tr>
+        <tr><td>网红内容以测评种草为主</td><td>用户质疑真实性</td><td>转向：扶持真实买家发长期使用日记</td></tr>
+        <tr><td>折扣码在公开视频全量曝光</td><td>强化"被付钱说好话"印象</td><td>折扣码改为会员专属，减少公开视频出现</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 执行路线图 -->
+  <div class="section-title">执行路线图</div>
+  <div class="card">
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot tl-now">Now</div>
+        <div class="tl-content">
+          <div class="tl-period">现在 → 3个月</div>
+          <ul class="tl-item-list">
+            <li>Meta广告：旅行自由线 + 独立自主线 A/B测试</li>
+            <li>发起「我的OAS第30天」UGC活动，征集真实买家内容</li>
+            <li>优化保修页面：明确写明「车架5年，核心部件12个月」，避免日后争议</li>
+            <li>停止新增网红合作，聚焦已有6名网红的内容质量</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot tl-mid">3M</div>
+        <div class="tl-content">
+          <div class="tl-period">3个月 → 6个月</div>
+          <ul class="tl-item-list">
+            <li>沉淀UGC素材，转化为新的Meta广告创意</li>
+            <li>Google搜索广告上线：主打旅行+老年父母礼品关键词</li>
+            <li>争取1-2篇YouTube长期测评（非付费，真实用户）</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot tl-future">6M+</div>
+        <div class="tl-content">
+          <div class="tl-period">6个月以上</div>
+          <ul class="tl-item-list">
+            <li>凭积累的真实口碑，在Reddit社群自然扭转「赞助品牌」标签</li>
+            <li>探索人体工学配件线（可调靠背/凝胶坐垫）——已有明确用户需求</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 保修警示 -->
+  <div class="warning-box">
+    <span class="warning-icon">⚠️</span>
+    <div class="warning-text">
+      <strong>保修说明注意事项：</strong>广告中「5年保修」实为<strong>车架5年，驱动系统/电子元件/电池均为12个月</strong>（官网保修页实测确认）。建议在广告和产品页主动说明清楚，避免用户因误解产生投诉，损害已有的良好客服口碑。
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- 数据缺口声明 -->
+  <div class="caveat">
+    <strong>数据来源与缺口声明</strong><br>
+    ✅ 已采集：Reviews（55条，Reddit + Trustpilot + BBB）· Meta广告情报（4品牌）· 官网产品规格/保修/退货政策（Playwright实测）<br>
+    ❌ 未采集：SEO关键词分析 · 市场规模/趋势数据 · 网站深度结构分析<br>
+    ⚠️ 人群年龄区间、购买比例为定性推断，非Meta后台数据验证<br>
+    ⚠️ All Star / Rubicon 的 FDA 认证状态未实测，标注为「未验证」<br>
+    ⚠️ 竞品错位分析中「行业唯一」结论基于已采集的4个竞品，不排除市场存在其他品牌
+  </div>
+
+</div><!-- /body -->
+
+<div class="footer">
+  <p>OAS Mobility 品牌策略方案 · 由 Yoga's AI Toolkit 生成 · 2026-06-16</p>
+</div>
+
+</body>
+</html>
